@@ -1,0 +1,47 @@
+services:
+  littlelink-server:
+    image: ghcr.io/techno-tim/littlelink-server:latest
+    # dockerhub is also supported timothystewart6/littlelink-server
+    # image: timothystewart6/littlelink-server:latest
+    container_name: littlelink-server
+    environment:
+      - META_TITLE=Alejandro Ouslan
+      - META_DESCRIPTION=Software Engineer | Economist | Data Scinetist
+      - META_AUTHOR=Alejandor
+      - META_KEYWORDS=HomeLab, Python, Rust, Economics
+      - LANG=en
+      - META_INDEX_STATUS=all
+      - OG_SITE_NAME=Alejandro Ouslan
+      - OG_TITLE=Alejandro Ouslan
+      - OG_DESCRIPTION=The home of Alejandro Ouslan
+      - OG_URL=https://github.com/UnclearCoder/unclearcoder.github.io/blob/main/assets/headshot.png
+      - OG_IMAGE=https://github.com/UnclearCoder/unclearcoder.github.io/blob/main/assets/headshot.png
+      - OG_IMAGE_WIDTH=400
+      - OG_IMAGE_HEIGHT=400s
+      - GA_TRACKING_ID=G-XXXXXXXXXX
+      - THEME=Dark
+      - FAVICON_URL=https://github.com/UnclearCoder/unclearcoder.github.io/blob/main/assets/headshot.png
+      - AVATAR_URL=https://github.com/UnclearCoder/unclearcoder.github.io/blob/main/assets/headshot.png
+      - AVATAR_2X_URL=https://github.com/UnclearCoder/unclearcoder.github.io/blob/main/assets/headshot.png
+      - AVATAR_ALT=Alejandro
+      - NAME=Alejandro Ouslan
+      - BIO=Software Engineer | Economist | Data Scinetist
+      # use ENV variable names for order, listed buttons will be boosted to the top
+      - BUTTON_ORDER=GITHUB,LINKED_IN,CENSUS,IDH
+      # you can render an unlimited amount of custom buttons by adding 
+      # the CUSTOM_BUTTON_* variables and by using a comma as a separator.
+      - CUSTOM_BUTTON_TEXT=Census AEA Project, IDH Research Project
+      - CUSTOM_BUTTON_URL=https://github.com/UnclearCoder/mov, https://github.com/UnclearCoder/IDH-index
+      - CUSTOM_BUTTON_COLOR=#000000,#000000
+      - CUSTOM_BUTTON_TEXT_COLOR=#ffffff,#ffffff
+      - CUSTOM_BUTTON_ALT_TEXT=Tech AEA summer research project with the Census , Human Development Index for PR
+      - CUSTOM_BUTTON_NAME=CENSUS,IDH
+      - CUSTOM_BUTTON_ICON=fas file-alt,fas file-alt
+      - GITHUB=https://github.com/unclearcoder
+      - LINKED_IN=www.linkedin.com/in/alejandro-o-1531ab1b6
+      - FOOTER=Alejandro Ouslan © 2024
+    ports:
+      - 8089:3000
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
